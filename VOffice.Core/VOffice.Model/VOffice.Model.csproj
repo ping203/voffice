@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{372F68A0-9DE2-442A-8822-84CB9061E9C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VOffice.Model</RootNamespace>
+    <AssemblyName>VOffice.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\IdentityModels.cs" />
+    <Compile Include="ApplicationLogging.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetGroup.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserRole.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentStaff.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentAttachment.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentDelivered.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentDocumentField.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentField.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentFieldDepartment.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentHistory.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentOpinion.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentOpinionAttachment.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentReceived.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentRecipent.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentSignedBy.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentType.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Event.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventUserNotify.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalSendReceiveDivision.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fn_Split_Result.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Function.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImportantJob.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MeetingRoom.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SPGetConfig_Result.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPGetCustomer_Result.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPGetDocumentSignedBy_Result.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPGetDocumentType_Result.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPGetMeetingRoom_Result.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPGetSystemConfigDepartment_Result.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfig.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfigDepartment.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Task.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaskAssignee.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaskAttachment.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaskDocument.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaskOpinion.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaskType.cs">
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validators\Calendar\EventUserNotifyValidator.cs" />
+    <Compile Include="Validators\Calendar\EventValidator.cs" />
+    <Compile Include="Validators\Calendar\ImportantJobValidator.cs" />
+    <Compile Include="Validators\Category\CountryValidator.cs" />
+    <Compile Include="Validators\Category\CustomerValidator.cs" />
+    <Compile Include="Validators\Category\StatusValidator.cs" />
+    <Compile Include="Validators\Document\DocumentFieldDepartmentValidator.cs" />
+    <Compile Include="Validators\Document\DocumentFieldValidator.cs" />
+    <Compile Include="Validators\Document\ExternalSendReceiveDivisionValidator.cs" />
+    <Compile Include="Validators\Document\DocumentSignedByValidator.cs" />
+    <Compile Include="Validators\Document\DocumentDeliveredValidator.cs" />
+    <Compile Include="Validators\Document\DocumentReceivedValidator.cs" />
+    <Compile Include="Validators\Document\DocumentRecipentValidator.cs" />
+    <Compile Include="Validators\Document\DocumentOpinionAttachmentValidator.cs" />
+    <Compile Include="Validators\Document\DocumentOpinionValidator.cs" />
+    <Compile Include="Validators\Document\DocumentHistoryValidator.cs" />
+    <Compile Include="Validators\Document\DocumentAttachmentValidator.cs" />
+    <Compile Include="Validators\Document\DocumentTypeValidator.cs" />
+    <Compile Include="Validators\Category\MeetingRoomValidator.cs" />
+    <Compile Include="Validators\Organization\DepartmentStaffsValidator.cs" />
+    <Compile Include="Validators\Share\SystemConfigDepartmentValidator.cs" />
+    <Compile Include="Validators\Share\SystemConfigValidator.cs" />
+    <Compile Include="Validators\Organization\StaffValidator.cs" />
+    <Compile Include="Validators\Share\FunctionValidator.cs" />
+    <Compile Include="Validators\Organization\DepartmentValidator.cs" />
+    <Compile Include="Validators\Share\ApplicationLoggingValidator.cs" />
+    <Compile Include="Validators\Task\TaskTypeValidator.cs" />
+    <Compile Include="Validators\Task\TaskOpinionValidator.cs" />
+    <Compile Include="Validators\Task\TaskDocumentsValidator.cs" />
+    <Compile Include="Validators\Task\TaskAttachmentValidator.cs" />
+    <Compile Include="Validators\Task\TaskAssigneeValidator.cs" />
+    <Compile Include="Validators\Task\TaskValidator.cs" />
+    <Compile Include="Validators\Task\ProjectValidator.cs" />
+    <Compile Include="VOffice.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VOffice.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VOffice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VOffice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VOffice.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VOffice.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="VOffice.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VOffice.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="VOffice.edmx.diagram">
+      <DependentUpon>VOffice.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VOffice.Core\VOffice.Core.csproj">
+      <Project>{A19C1649-2612-42F8-949B-2F3BEE62162A}</Project>
+      <Name>VOffice.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="VOffice.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VOffice.edmx</DependentUpon>
+      <LastGenOutput>VOffice.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="VOffice.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VOffice.edmx</DependentUpon>
+      <LastGenOutput>VOffice.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

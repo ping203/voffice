@@ -1,0 +1,1327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VOfficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="TwoLettersCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="ThreeLettersCode" Type="nvarchar" MaxLength="3" />
+    <Property Name="NumberCode" Type="int" />
+    <Property Name="Order" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ShortTitle" Type="nvarchar" MaxLength="256" />
+    <Property Name="Order" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="1000" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="BankAccountNumber" Type="nvarchar" MaxLength="256" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MeetingRoom">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Address" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Capacity" Type="int" />
+    <Property Name="Splittable" Type="bit" Nullable="false" />
+    <Property Name="Shareable" Type="bit" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="OccurDate" Type="datetime" Nullable="false" />
+    <Property Name="Content" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Place" Type="nvarchar" MaxLength="500" />
+    <Property Name="MeetingRoomId" Type="int" />
+    <Property Name="Participant" Type="nvarchar" MaxLength="1000" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="StartTimeUnderfined" Type="datetime" Nullable="false" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="EndTimeUndefined" Type="bit" Nullable="false" />
+    <Property Name="Morning" Type="bit" Nullable="false" />
+    <Property Name="Public" Type="bit" Nullable="false" />
+    <Property Name="Important" Type="bit" Nullable="false" />
+    <Property Name="NotificationTimeSpan" Type="int" />
+    <Property Name="LeaderId" Type="int" />
+    <Property Name="Accepted" Type="bit" Nullable="false" />
+    <Property Name="AcceptedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="AcceptedOn" Type="datetime" />
+    <Property Name="Canceled" Type="bit" Nullable="false" />
+    <Property Name="CanceledBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="CanceledOn" Type="datetime" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EventUserNotify">
+    <Key>
+      <PropertyRef Name="EventId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="EventId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImportantJob">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Note" Type="bit" Nullable="false" />
+    <Property Name="Content" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetGroupRoles">
+    <Key>
+      <PropertyRef Name="GroupId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="GroupId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetGroups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetGroupUsers">
+    <Key>
+      <PropertyRef Name="GroupId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="GroupId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="GroupBy" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Grant" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="GoogleAccount" Type="nvarchar" MaxLength="256" />
+    <Property Name="ExpiryDate" Type="datetime" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="DocumentAttachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="DocumentId" Type="int" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="ReceivedDocument" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentDelivered">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentNumber" Type="nvarchar" MaxLength="256" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="DocumentDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="DeliveredDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="ExternalReceiveDivisionId" Type="int" />
+    <Property Name="ExternalReceiveDivision" Type="nvarchar" MaxLength="1000" />
+    <Property Name="RecipientsDivision" Type="nvarchar" MaxLength="1000" />
+    <Property Name="SignedById" Type="int" />
+    <Property Name="SignedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="DocumentTypeId" Type="int" Nullable="false" />
+    <Property Name="NumberOfCopies" Type="int" Nullable="false" />
+    <Property Name="NumberOfPages" Type="int" Nullable="false" />
+    <Property Name="SecretLevel" Type="tinyint" Nullable="false" />
+    <Property Name="UrgencyLevel" Type="tinyint" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="1000" />
+    <Property Name="OriginalSavingPlace" Type="nvarchar" MaxLength="1000" />
+    <Property Name="LegalDocument" Type="bit" Nullable="false" />
+    <Property Name="AttachmentName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="AttachmentPath" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentDocumentFields">
+    <Key>
+      <PropertyRef Name="DocumentId" />
+      <PropertyRef Name="DocumentFieldDepartmentId" />
+    </Key>
+    <Property Name="DocumentId" Type="int" Nullable="false" />
+    <Property Name="DocumentFieldDepartmentId" Type="int" Nullable="false" />
+    <Property Name="ReceivedDocument" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentField">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="AllowClientEdit" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentFieldDepartment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FieldId" Type="int" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentId" Type="int" Nullable="false" />
+    <Property Name="ReceivedDocument" Type="bit" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="AttempOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentOpinion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="DocumentId" Type="int" />
+    <Property Name="ReceivedDocument" Type="bit" Nullable="false" />
+    <Property Name="LeaderId" Type="int" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentOpinionAttachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="OpinionId" Type="int" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentReceived">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReceivedNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="DocumentDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="ReceivedDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="ExternalFromDivisionId" Type="int" />
+    <Property Name="ExternalFromDivision" Type="nvarchar" MaxLength="1000" />
+    <Property Name="RecipientsDivision" Type="nvarchar" MaxLength="4000" />
+    <Property Name="SignedById" Type="int" />
+    <Property Name="SignedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="DocumentTypeId" Type="int" Nullable="false" />
+    <Property Name="AddedDocumentBook" Type="bit" Nullable="false" />
+    <Property Name="DocumentBookAddedOn" Type="datetime" />
+    <Property Name="DocumentBookAddedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="NumberOfCopies" Type="int" Nullable="false" />
+    <Property Name="NumberOfPages" Type="int" Nullable="false" />
+    <Property Name="SecretLevel" Type="tinyint" Nullable="false" />
+    <Property Name="UrgencyLevel" Type="tinyint" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="OriginalSavingPlace" Type="nvarchar" MaxLength="256" />
+    <Property Name="LegalDocument" Type="bit" Nullable="false" />
+    <Property Name="AttachmentName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="AttachmentPath" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="DeliveredDocumentId" Type="int" />
+    <Property Name="ReceivedDocumentId" Type="int" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentRecipent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="ReceivedDocument" Type="bit" Nullable="false" />
+    <Property Name="Forwarded" Type="bit" Nullable="false" />
+    <Property Name="Assigned" Type="bit" Nullable="false" />
+    <Property Name="AddedDocumentBook" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentSignedBy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="500" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="ReceivedDocument" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExternalSendReceiveDivision">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ReceivedDocument" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ShortName" Type="nvarchar" MaxLength="256" />
+    <Property Name="ParentId" Type="int" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="1000" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="BankAccountNumber" Type="nvarchar" MaxLength="256" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DepartmentStaffs">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+      <PropertyRef Name="StaffId" />
+    </Key>
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="StaffId" Type="int" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="500" />
+    <Property Name="MainDepartment" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StaffCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Avatar" Type="nvarchar" MaxLength="500" />
+    <Property Name="Order" Type="int" Nullable="false" />
+    <Property Name="Leader" Type="bit" Nullable="false" />
+    <Property Name="SeniorLeader" Type="bit" Nullable="false" />
+    <Property Name="SignedBy" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApplicationLogging">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModelName" Type="nvarchar" MaxLength="256" />
+    <Property Name="ModelId" Type="int" />
+    <Property Name="ModelProperty" Type="nvarchar" MaxLength="256" />
+    <Property Name="OldValue" Type="nvarchar(max)" />
+    <Property Name="NewValue" Type="nvarchar(max)" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="UserHostAddress" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Function">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ParentId" Type="int" Nullable="false" />
+    <Property Name="Href" Type="nvarchar" MaxLength="500" />
+    <Property Name="Target" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Icon" Type="nvarchar" MaxLength="256" />
+    <Property Name="Order" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleFunction">
+    <Key>
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="FunctionId" />
+    </Key>
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="FunctionId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SystemConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="AllowClientEdit" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SystemConfigDepartment">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+      <PropertyRef Name="ConfigId" />
+    </Key>
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="ConfigId" Type="int" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ManagerId" Type="int" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="ProjectId" Type="int" />
+    <Property Name="TaskTypeId" Type="int" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" />
+    <Property Name="Priority" Type="int" Nullable="false" />
+    <Property Name="DueDate" Type="datetime" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="Estimated" Type="int" />
+    <Property Name="TimeSpent" Type="int" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="ContactInformation" Type="nvarchar" MaxLength="500" />
+    <Property Name="Rating" Type="int" Nullable="false" />
+    <Property Name="Result" Type="nvarchar" MaxLength="500" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskAssignee">
+    <Key>
+      <PropertyRef Name="TaskId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="TaskId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Assignee" Type="bit" Nullable="false" />
+    <Property Name="Coprocessor" Type="bit" Nullable="false" />
+    <Property Name="Supervisor" Type="bit" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskAttachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="RecordId" Type="int" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskDocuments">
+    <Key>
+      <PropertyRef Name="TaskId" />
+      <PropertyRef Name="DocumentId" />
+    </Key>
+    <Property Name="TaskId" Type="int" Nullable="false" />
+    <Property Name="DocumentId" Type="int" Nullable="false" />
+    <Property Name="ReceivedDocument" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskOpinion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="TaskId" Type="int" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EditedOn" Type="datetime" Nullable="false" />
+    <Property Name="EditedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AspNetGroupRoles_AspNetGroups">
+    <End Role="AspNetGroups" Type="Self.AspNetGroups" Multiplicity="1" />
+    <End Role="AspNetGroupRoles" Type="Self.AspNetGroupRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetGroups">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetGroupRoles">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetGroupRoles_AspNetRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1" />
+    <End Role="AspNetGroupRoles" Type="Self.AspNetGroupRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetGroupRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetGroupUsers_AspNetGroups">
+    <End Role="AspNetGroups" Type="Self.AspNetGroups" Multiplicity="1" />
+    <End Role="AspNetGroupUsers" Type="Self.AspNetGroupUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetGroups">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetGroupUsers">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetGroupUsers_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="AspNetGroupUsers" Type="Self.AspNetGroupUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetGroupUsers">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeliveredDocument_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="DocumentDelivered" Type="Self.DocumentDelivered" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentDelivered">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeliveredDocument_DocumentType">
+    <End Role="DocumentType" Type="Self.DocumentType" Multiplicity="1" />
+    <End Role="DocumentDelivered" Type="Self.DocumentDelivered" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentDelivered">
+        <PropertyRef Name="DocumentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepartmentStaffs_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="DepartmentStaffs" Type="Self.DepartmentStaffs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DepartmentStaffs">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepartmentStaffs_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="DepartmentStaffs" Type="Self.DepartmentStaffs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DepartmentStaffs">
+        <PropertyRef Name="StaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentFieldDepartment_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="DocumentFieldDepartment" Type="Self.DocumentFieldDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentFieldDepartment">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentFieldDepartment_DocumentField">
+    <End Role="DocumentField" Type="Self.DocumentField" Multiplicity="1" />
+    <End Role="DocumentFieldDepartment" Type="Self.DocumentFieldDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentField">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentFieldDepartment">
+        <PropertyRef Name="FieldId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentOpinionAttachment_DocumentOpinion">
+    <End Role="DocumentOpinion" Type="Self.DocumentOpinion" Multiplicity="1" />
+    <End Role="DocumentOpinionAttachment" Type="Self.DocumentOpinionAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentOpinion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentOpinionAttachment">
+        <PropertyRef Name="OpinionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventUser_Event">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="EventUserNotify" Type="Self.EventUserNotify" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EventUserNotify">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportantJob_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="ImportantJob" Type="Self.ImportantJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImportantJob">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReceivedDocument_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="DocumentReceived" Type="Self.DocumentReceived" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentReceived">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReceivedDocument_DocumentType">
+    <End Role="DocumentType" Type="Self.DocumentType" Multiplicity="1" />
+    <End Role="DocumentReceived" Type="Self.DocumentReceived" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentReceived">
+        <PropertyRef Name="DocumentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleFunction_AspNetRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1" />
+    <End Role="RoleFunction" Type="Self.RoleFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleFunction">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleFunction_Function">
+    <End Role="Function" Type="Self.Function" Multiplicity="1" />
+    <End Role="RoleFunction" Type="Self.RoleFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Function">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleFunction">
+        <PropertyRef Name="FunctionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemConfigDepartment_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="SystemConfigDepartment" Type="Self.SystemConfigDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SystemConfigDepartment">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemConfigDepartment_SystemConfig">
+    <End Role="SystemConfig" Type="Self.SystemConfig" Multiplicity="1" />
+    <End Role="SystemConfigDepartment" Type="Self.SystemConfigDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemConfig">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SystemConfigDepartment">
+        <PropertyRef Name="ConfigId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_TaskType">
+    <End Role="TaskType" Type="Self.TaskType" Multiplicity="0..1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="TaskTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskAssignee_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1" />
+    <End Role="TaskAssignee" Type="Self.TaskAssignee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TaskAssignee">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskDocuments_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1" />
+    <End Role="TaskDocuments" Type="Self.TaskDocuments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TaskDocuments">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SPGetCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="cate">
+    <Parameter Name="keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="start" Type="int" Mode="In" />
+    <Parameter Name="limit" Type="int" Mode="In" />
+    <Parameter Name="total" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SPGetMeetingRoom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="cate">
+    <Parameter Name="keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="departmentId" Type="nvarchar" Mode="In" />
+    <Parameter Name="start" Type="int" Mode="In" />
+    <Parameter Name="limit" Type="int" Mode="In" />
+    <Parameter Name="total" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="fn_Split" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="text" Type="varchar" Mode="In" />
+    <Parameter Name="delimiter" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="position" Type="int" Nullable="false" />
+          <Property Name="value" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SPGetDocumentSignedBy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="doc">
+    <Parameter Name="keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="receivedDocument" Type="bit" Mode="In" />
+    <Parameter Name="start" Type="int" Mode="In" />
+    <Parameter Name="limit" Type="int" Mode="In" />
+    <Parameter Name="total" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SPGetDocumentType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="doc">
+    <Parameter Name="keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="start" Type="int" Mode="In" />
+    <Parameter Name="limit" Type="int" Mode="In" />
+    <Parameter Name="total" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SPGetConfig" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="share">
+    <Parameter Name="keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="start" Type="int" Mode="In" />
+    <Parameter Name="limit" Type="int" Mode="In" />
+    <Parameter Name="total" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SPGetSystemConfigDepartment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="share">
+    <Parameter Name="keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="departmentID" Type="int" Mode="In" />
+    <Parameter Name="start" Type="int" Mode="In" />
+    <Parameter Name="limit" Type="int" Mode="In" />
+    <Parameter Name="total" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="VOfficeModelStoreContainer">
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="cate" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="cate" store:Type="Tables" />
+    <EntitySet Name="MeetingRoom" EntityType="Self.MeetingRoom" Schema="cate" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="cate" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="cld" store:Type="Tables" />
+    <EntitySet Name="EventUserNotify" EntityType="Self.EventUserNotify" Schema="cld" store:Type="Tables" />
+    <EntitySet Name="ImportantJob" EntityType="Self.ImportantJob" Schema="cld" store:Type="Tables" />
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetGroupRoles" EntityType="Self.AspNetGroupRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetGroups" EntityType="Self.AspNetGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetGroupUsers" EntityType="Self.AspNetGroupUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentAttachment" EntityType="Self.DocumentAttachment" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="DocumentDelivered" EntityType="Self.DocumentDelivered" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="DocumentDocumentFields" EntityType="Self.DocumentDocumentFields" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="DocumentField" EntityType="Self.DocumentField" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="DocumentFieldDepartment" EntityType="Self.DocumentFieldDepartment" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="DocumentHistory" EntityType="Self.DocumentHistory" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="DocumentOpinion" EntityType="Self.DocumentOpinion" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="DocumentOpinionAttachment" EntityType="Self.DocumentOpinionAttachment" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="DocumentReceived" EntityType="Self.DocumentReceived" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="DocumentRecipent" EntityType="Self.DocumentRecipent" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="DocumentSignedBy" EntityType="Self.DocumentSignedBy" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="DocumentType" EntityType="Self.DocumentType" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="ExternalSendReceiveDivision" EntityType="Self.ExternalSendReceiveDivision" Schema="doc" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="organiz" store:Type="Tables" />
+    <EntitySet Name="DepartmentStaffs" EntityType="Self.DepartmentStaffs" Schema="organiz" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="organiz" store:Type="Tables" />
+    <EntitySet Name="ApplicationLogging" EntityType="Self.ApplicationLogging" Schema="share" store:Type="Tables" />
+    <EntitySet Name="Function" EntityType="Self.Function" Schema="share" store:Type="Tables" />
+    <EntitySet Name="RoleFunction" EntityType="Self.RoleFunction" Schema="share" store:Type="Tables" />
+    <EntitySet Name="SystemConfig" EntityType="Self.SystemConfig" Schema="share" store:Type="Tables" />
+    <EntitySet Name="SystemConfigDepartment" EntityType="Self.SystemConfigDepartment" Schema="share" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" Schema="task" store:Type="Tables" />
+    <EntitySet Name="Task" EntityType="Self.Task" Schema="task" store:Type="Tables" />
+    <EntitySet Name="TaskAssignee" EntityType="Self.TaskAssignee" Schema="task" store:Type="Tables" />
+    <EntitySet Name="TaskAttachment" EntityType="Self.TaskAttachment" Schema="task" store:Type="Tables" />
+    <EntitySet Name="TaskDocuments" EntityType="Self.TaskDocuments" Schema="task" store:Type="Tables" />
+    <EntitySet Name="TaskOpinion" EntityType="Self.TaskOpinion" Schema="task" store:Type="Tables" />
+    <EntitySet Name="TaskType" EntityType="Self.TaskType" Schema="task" store:Type="Tables" />
+    <AssociationSet Name="FK_AspNetGroupRoles_AspNetGroups" Association="Self.FK_AspNetGroupRoles_AspNetGroups">
+      <End Role="AspNetGroups" EntitySet="AspNetGroups" />
+      <End Role="AspNetGroupRoles" EntitySet="AspNetGroupRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetGroupRoles_AspNetRoles" Association="Self.FK_AspNetGroupRoles_AspNetRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetGroupRoles" EntitySet="AspNetGroupRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetGroupUsers_AspNetGroups" Association="Self.FK_AspNetGroupUsers_AspNetGroups">
+      <End Role="AspNetGroups" EntitySet="AspNetGroups" />
+      <End Role="AspNetGroupUsers" EntitySet="AspNetGroupUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetGroupUsers_AspNetUsers" Association="Self.FK_AspNetGroupUsers_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetGroupUsers" EntitySet="AspNetGroupUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeliveredDocument_Department" Association="Self.FK_DeliveredDocument_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="DocumentDelivered" EntitySet="DocumentDelivered" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeliveredDocument_DocumentType" Association="Self.FK_DeliveredDocument_DocumentType">
+      <End Role="DocumentType" EntitySet="DocumentType" />
+      <End Role="DocumentDelivered" EntitySet="DocumentDelivered" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepartmentStaffs_Department" Association="Self.FK_DepartmentStaffs_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="DepartmentStaffs" EntitySet="DepartmentStaffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepartmentStaffs_Staff" Association="Self.FK_DepartmentStaffs_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="DepartmentStaffs" EntitySet="DepartmentStaffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentFieldDepartment_Department" Association="Self.FK_DocumentFieldDepartment_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="DocumentFieldDepartment" EntitySet="DocumentFieldDepartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentFieldDepartment_DocumentField" Association="Self.FK_DocumentFieldDepartment_DocumentField">
+      <End Role="DocumentField" EntitySet="DocumentField" />
+      <End Role="DocumentFieldDepartment" EntitySet="DocumentFieldDepartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentOpinionAttachment_DocumentOpinion" Association="Self.FK_DocumentOpinionAttachment_DocumentOpinion">
+      <End Role="DocumentOpinion" EntitySet="DocumentOpinion" />
+      <End Role="DocumentOpinionAttachment" EntitySet="DocumentOpinionAttachment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Department" Association="Self.FK_Event_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventUser_Event" Association="Self.FK_EventUser_Event">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="EventUserNotify" EntitySet="EventUserNotify" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportantJob_Department" Association="Self.FK_ImportantJob_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="ImportantJob" EntitySet="ImportantJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReceivedDocument_Department" Association="Self.FK_ReceivedDocument_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="DocumentReceived" EntitySet="DocumentReceived" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReceivedDocument_DocumentType" Association="Self.FK_ReceivedDocument_DocumentType">
+      <End Role="DocumentType" EntitySet="DocumentType" />
+      <End Role="DocumentReceived" EntitySet="DocumentReceived" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleFunction_AspNetRoles" Association="Self.FK_RoleFunction_AspNetRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="RoleFunction" EntitySet="RoleFunction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleFunction_Function" Association="Self.FK_RoleFunction_Function">
+      <End Role="Function" EntitySet="Function" />
+      <End Role="RoleFunction" EntitySet="RoleFunction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemConfigDepartment_Department" Association="Self.FK_SystemConfigDepartment_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="SystemConfigDepartment" EntitySet="SystemConfigDepartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemConfigDepartment_SystemConfig" Association="Self.FK_SystemConfigDepartment_SystemConfig">
+      <End Role="SystemConfig" EntitySet="SystemConfig" />
+      <End Role="SystemConfigDepartment" EntitySet="SystemConfigDepartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_Department" Association="Self.FK_Task_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Task" EntitySet="Task" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_Project" Association="Self.FK_Task_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="Task" EntitySet="Task" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_TaskType" Association="Self.FK_Task_TaskType">
+      <End Role="TaskType" EntitySet="TaskType" />
+      <End Role="Task" EntitySet="Task" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskAssignee_Task" Association="Self.FK_TaskAssignee_Task">
+      <End Role="Task" EntitySet="Task" />
+      <End Role="TaskAssignee" EntitySet="TaskAssignee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskDocuments_Task" Association="Self.FK_TaskDocuments_Task">
+      <End Role="Task" EntitySet="Task" />
+      <End Role="TaskDocuments" EntitySet="TaskDocuments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

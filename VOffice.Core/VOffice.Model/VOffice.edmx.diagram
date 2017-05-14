@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3dbc943c9e5c452c992841ec4878dd39" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="VOfficeModel.Country" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VOfficeModel.Customer" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="VOfficeModel.MeetingRoom" Width="1.5" PointX="2.75" PointY="5.75" />
+        <EntityTypeShape EntityType="VOfficeModel.Status" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="VOfficeModel.Event" Width="1.5" PointX="3" PointY="55.625" />
+        <EntityTypeShape EntityType="VOfficeModel.EventUserNotify" Width="1.5" PointX="5.25" PointY="58.125" />
+        <EntityTypeShape EntityType="VOfficeModel.ImportantJob" Width="1.5" PointX="3" PointY="63.25" />
+        <EntityTypeShape EntityType="VOfficeModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VOfficeModel.AspNetGroup" Width="1.5" PointX="8.75" PointY="6.25" />
+        <EntityTypeShape EntityType="VOfficeModel.AspNetRole" Width="1.5" PointX="11" PointY="9.75" />
+        <EntityTypeShape EntityType="VOfficeModel.AspNetUserClaim" Width="1.5" PointX="13.25" PointY="5.875" />
+        <EntityTypeShape EntityType="VOfficeModel.AspNetUserLogin" Width="1.5" PointX="13.25" PointY="3.25" />
+        <EntityTypeShape EntityType="VOfficeModel.AspNetUserRole" Width="1.5" PointX="13.25" PointY="8.5" />
+        <EntityTypeShape EntityType="VOfficeModel.AspNetUser" Width="1.5" PointX="11" PointY="2.875" />
+        <EntityTypeShape EntityType="VOfficeModel.sysdiagram" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="VOfficeModel.DocumentAttachment" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="VOfficeModel.DocumentDelivered" Width="1.5" PointX="6" PointY="28.875" />
+        <EntityTypeShape EntityType="VOfficeModel.DocumentDocumentField" Width="1.5" PointX="8.75" PointY="13.75" />
+        <EntityTypeShape EntityType="VOfficeModel.DocumentField" Width="1.5" PointX="3.75" PointY="11.625" />
+        <EntityTypeShape EntityType="VOfficeModel.DocumentFieldDepartment" Width="1.5" PointX="6" PointY="20.375" />
+        <EntityTypeShape EntityType="VOfficeModel.DocumentHistory" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VOfficeModel.DocumentOpinion" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="VOfficeModel.DocumentOpinionAttachment" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="VOfficeModel.DocumentReceived" Width="1.5" PointX="9" PointY="22.25" />
+        <EntityTypeShape EntityType="VOfficeModel.DocumentRecipent" Width="1.5" PointX="15.75" PointY="3.75" />
+        <EntityTypeShape EntityType="VOfficeModel.DocumentSignedBy" Width="1.5" PointX="15.75" PointY="7.75" />
+        <EntityTypeShape EntityType="VOfficeModel.DocumentType" Width="1.5" PointX="6.75" PointY="11.625" />
+        <EntityTypeShape EntityType="VOfficeModel.ExternalSendReceiveDivision" Width="1.5" PointX="15.75" PointY="11.75" />
+        <EntityTypeShape EntityType="VOfficeModel.Department" Width="1.5" PointX="0.75" PointY="23.125" />
+        <EntityTypeShape EntityType="VOfficeModel.DepartmentStaff" Width="1.5" PointX="3" PointY="18.75" />
+        <EntityTypeShape EntityType="VOfficeModel.Staff" Width="1.5" PointX="0.75" PointY="16.5" />
+        <EntityTypeShape EntityType="VOfficeModel.ApplicationLogging" Width="1.5" PointX="15.75" PointY="15.75" />
+        <EntityTypeShape EntityType="VOfficeModel.Function" Width="1.5" PointX="13.25" PointY="11.75" />
+        <EntityTypeShape EntityType="VOfficeModel.SystemConfig" Width="1.5" PointX="3.75" PointY="30.375" />
+        <EntityTypeShape EntityType="VOfficeModel.SystemConfigDepartment" Width="1.5" PointX="6" PointY="24.75" />
+        <EntityTypeShape EntityType="VOfficeModel.Project" Width="1.5" PointX="0.75" PointY="30.875" />
+        <EntityTypeShape EntityType="VOfficeModel.Task" Width="1.5" PointX="3" PointY="22.75" />
+        <EntityTypeShape EntityType="VOfficeModel.TaskAssignee" Width="1.5" PointX="5.25" PointY="16.375" />
+        <EntityTypeShape EntityType="VOfficeModel.TaskAttachment" Width="1.5" PointX="8.75" PointY="16.75" />
+        <EntityTypeShape EntityType="VOfficeModel.TaskDocument" Width="1.5" PointX="5.25" PointY="36.875" />
+        <EntityTypeShape EntityType="VOfficeModel.TaskOpinion" Width="1.5" PointX="10.75" PointY="16.75" />
+        <EntityTypeShape EntityType="VOfficeModel.TaskType" Width="1.5" PointX="0.75" PointY="34.5" />
+        <AssociationConnector Association="VOfficeModel.FK_Event_Department" />
+        <AssociationConnector Association="VOfficeModel.FK_EventUser_Event" />
+        <AssociationConnector Association="VOfficeModel.FK_ImportantJob_Department" />
+        <AssociationConnector Association="VOfficeModel.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" />
+        <AssociationConnector Association="VOfficeModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="VOfficeModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="VOfficeModel.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="VOfficeModel.FK_DeliveredDocument_Department" />
+        <AssociationConnector Association="VOfficeModel.FK_DeliveredDocument_DocumentType" />
+        <AssociationConnector Association="VOfficeModel.FK_DocumentFieldDepartment_DocumentField" />
+        <AssociationConnector Association="VOfficeModel.FK_DocumentFieldDepartment_Department" />
+        <AssociationConnector Association="VOfficeModel.FK_DocumentOpinionAttachment_DocumentOpinion" />
+        <AssociationConnector Association="VOfficeModel.FK_ReceivedDocument_Department" />
+        <AssociationConnector Association="VOfficeModel.FK_ReceivedDocument_DocumentType" />
+        <AssociationConnector Association="VOfficeModel.FK_DepartmentStaffs_Department" />
+        <AssociationConnector Association="VOfficeModel.FK_SystemConfigDepartment_Department" />
+        <AssociationConnector Association="VOfficeModel.FK_Task_Department" />
+        <AssociationConnector Association="VOfficeModel.FK_DepartmentStaffs_Staff" />
+        <AssociationConnector Association="VOfficeModel.FK_SystemConfigDepartment_SystemConfig" />
+        <AssociationConnector Association="VOfficeModel.FK_Task_Project" />
+        <AssociationConnector Association="VOfficeModel.FK_Task_TaskType" />
+        <AssociationConnector Association="VOfficeModel.FK_TaskAssignee_Task" />
+        <AssociationConnector Association="VOfficeModel.FK_TaskDocuments_Task" />
+        <AssociationConnector Association="VOfficeModel.AspNetGroupRoles" />
+        <AssociationConnector Association="VOfficeModel.AspNetGroupUsers" />
+        <AssociationConnector Association="VOfficeModel.RoleFunction" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

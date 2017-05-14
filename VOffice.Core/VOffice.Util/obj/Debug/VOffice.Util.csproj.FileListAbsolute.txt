@@ -1,0 +1,5 @@
+E:\VLA\Code\VOffice\VOffice.Core\VOffice.Util\bin\Debug\VOffice.Util.dll
+E:\VLA\Code\VOffice\VOffice.Core\VOffice.Util\bin\Debug\VOffice.Util.pdb
+E:\VLA\Code\VOffice\VOffice.Core\VOffice.Util\obj\Debug\VOffice.Util.csprojResolveAssemblyReference.cache
+E:\VLA\Code\VOffice\VOffice.Core\VOffice.Util\obj\Debug\VOffice.Util.dll
+E:\VLA\Code\VOffice\VOffice.Core\VOffice.Util\obj\Debug\VOffice.Util.pdb
