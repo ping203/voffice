@@ -1,0 +1,104 @@
+﻿<form class="form-horizontal" novalidate name="frmAddOrEditMeetingRoom" role="form" ng-submit="save()">
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-sm-10">
+            <h2>Cập nhật phòng họp</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/">Trang chủ </a>
+                </li>
+                <li class="active">
+                    <strong>Cập nhật phòng họp</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight ecommerce">
+        <div class="row scroll-able">
+            <div class="col-lg-12 animated fadeInRight">
+                <div class="form-box-header">
+                    <div class="pull-right form-actions">
+                        <button class="btn btn-sm btn-primary" type="submit">Cập nhật</button>
+                        <button class="btn btn-sm btn-white" ui-sref="meetingRoom">Hủy bỏ</button>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Mã phòng họp</label>
+                            <div class="col-sm-6">
+                                <input type="text" id="code" placeholder="Mã phòng họp" ng-init="focusCode()" name="code" class="form-control" ng-model="meetingRoom.code" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Tên phòng họp</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Tên phòng họp" name="title" class="form-control" ng-model="meetingRoom.title" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Mô tả</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Mô tả" name="description" class="form-control" ng-model="meetingRoom.description" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Đơn vị</label>
+                            <div class="col-sm-6" id="list-room-view">
+                                <md-input-container>
+                                    <label></label>
+                                    <md-select ng-model="selectedVegetables"
+                                               md-on-close="clearSearchTerm()"
+                                               data-md-container-class="selectdemoSelectHeader">
+                                        <md-select-header class="demo-select-header">
+                                            <input id="hello" ng-model="searchTerm"
+                                                   type="search"
+                                                   placeholder="Tìm đơn vị.."
+                                                   class="demo-header-searchbox md-text">
+                                        </md-select-header>
+                                        <md-optgroup label="vegetables">
+                                            <md-option ng-value="vegetable" ng-repeat="vegetable in vegetables |
+							filter:searchTerm">{{vegetable.key}}</md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Thứ tự</label>
+                            <div class="col-sm-6">
+                                <multiple-autocomplete ng-model="skills"
+                                                       object-property="name"
+                                                       before-select-item="selectItemCallback"
+                                                       after-select-item="selectItemCallback"
+                                                       before-remove-item="removeItemCallback"
+                                                       after-remove-item="removeItemCallback"
+                                                       suggestions-arr="skillsList">
+                                </multiple-autocomplete>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Thứ tự</label>
+                            <div class="col-sm-1">
+                                <input type="number" placeholder="" ng-init="meetingRoom.order=0" name="order" class="form-control" ng-model="meetingRoom.order" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Kích hoạt</label>
+                            <div class="col-sm-6">
+                                <input type="checkbox" name="active" ng-init="meetingRoom.active = true" ng-model="meetingRoom.active">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-body text-right tooltip-demo form-actions">
+                        <button class="btn btn-sm btn-primary" type="submit">Cập nhật</button>
+                        <button class="btn btn-sm btn-white" ui-sref="meetingRoom">Hủy bỏ</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+

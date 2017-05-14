@@ -1,0 +1,112 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Danh mục khách hàng</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="/">Trang chủ</a>
+            </li>
+            <li class="active">
+                <strong>Danh mục phòng họp</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight ecommerce">
+    <div class="ibox-content m-b-sm border-bottom">
+        <div class="row">
+            <div class="col-sm-2">
+                <input type="button" class="btn btn-sm btn-primary" ui-sref="add_edit_meetingroom" value="Thêm mới" />
+            </div>
+            <div class="col-sm-4 pull-right">
+                <div class="input-group">
+                    <input type="text" placeholder="Tìm kiếm..." class="input-sm form-control" ng-model="keyword" ng-enter="search()"> <span class="input-group-btn">
+                        <button type="button" class="btn btn-sm btn-primary" ng-click="search()"> Tìm</button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-6" id="list-room-view">
+                <div layout="row">
+                    <md-input-container placeholder="adsd">
+                        <label class="label"></label>
+                        <md-select ng-model="selectedVegetables"
+                                   md-on-close="clearSearchTerm()"
+                                   data-md-container-class="selectdemoSelectHeader"
+                                   multiple>
+                            <md-select-header class="demo-select-header">
+                                <input id="hello" ng-model="searchTerm"
+                                       type="search"
+                                       placeholder="Tìm đơn vị.."
+                                       class="demo-header-searchbox md-text">
+                            </md-select-header>
+                            <md-optgroup label="vegetables">
+                                <md-option ng-value="vegetable" ng-repeat="vegetable in vegetables |
+							filter:searchTerm">{{vegetable.Key}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <table class="footable table table-stripped toggle-arrow-tiny">
+                        <thead>
+                            <tr>
+                                <th width="30px;">STT</th>
+                                <th width="100px;">Mã phòng họp</th>
+                                <th>Tên phòng họp</th>
+                                <th>Mô tả</th>
+                                <th>Đơn vị</th>
+                                <th>Trạng thái</th>
+                                <th style="width:100px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in listItem">
+                                <td>{{$index + 1}}</td>
+                                <td>{{item.code}}</td>
+                                <td>{{item.title}}</td>
+                                <td>{{item.description}}</td>
+                                <td>{{item.departmentId | listDepartmentFilter}}</td>
+                                <td>{{item.active | activeFilter}}</td>
+                                <td>
+                                    <div class="btn-group pull-right">
+                                        <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Thao tác <span class="caret"></span></button>
+
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a title="Chỉnh sửa" ui-sref="add_edit_meetingroom({id:item.id})" href="javascript;">
+                                                    Sửa
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a title="Xóa" ng-click="deleteMeetingRoom(item.id)">
+                                                    Xóa
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7" class="footable-visible">
+                                    <span class="pagination pull-right"> <ul uib-pagination items-per-page="recordsPerPage" total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="getListMeetingRoom(currentPage)" class="pagination-sm" boundary-links="true" rotate="true" force-ellipses="true" first-text="<<" last-text=">>" next-text=">" previous-text="<"></ul></span>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

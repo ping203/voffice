@@ -1,0 +1,90 @@
+﻿<div>
+    <div id="wrapper" >
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span>
+                                <img alt="image" class="img-circle" src="/assets/admin/img/profile_small.jpg" />
+                            </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">
+                                <span class="clear">
+                                    <span class="block m-t-xs">
+                                        <strong class="font-bold">Dương Văn Thỉnh</strong>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="profile.html">Thông tin cá nhân</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            VLA
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-archive"></i> <span class="nav-label">Trang chủ</span></a>
+                    </li>
+                    <li id="mnp_1" class="active">
+                        <a href="javascript:void(0);"><i class="fa fa-files-o"></i> <span class="nav-label">Quản lý văn bản</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="javascript:void(0);">Danh sách văn bản</a></li>
+                            <li class="">
+                                <a href="#">Danh mục <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level collapse" style="height: 0px;">
+                                    <li><a ui-sref="documentType">Loại văn bản</a></li>
+                                    <li> <a ui-sref="documentSignedBy" href="javascript:void(0);">Người kí văn bản</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="mnp_2">
+                        <a href="javascript:void(0);"><i class="fa fa-files-o"></i> <span class="nav-label">Quản lý danh mục</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a ui-sref="customer">Khách hàng</a></li>
+                            <li><a ui-sref="meetingRoom">Phòng họp</a></li>
+                        </ul>
+                    </li>
+                    <li id="mnp_3">
+                        <a href="javascript:void(0);"><i class="fa fa-circle-o"></i> <span class="nav-label">Quản lý hệ thống</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a ui-sref="systemConfig" href="javascript:void(0);">Cấu hình hệ thống</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" id="btnCollapse" href="javascript:void(0);"><i class="fa fa-bars"></i> </a>
+                        <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
+                            <div class="form-group">
+                                <!--<input type="text" placeholder="Tìm kiếm..." class="form-control" name="top-search" id="top-search">-->
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <a ng-click="logout()">
+                                <i class="fa fa-sign-out"></i> Đăng xuất
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div ui-view></div>
+            <div class="footer">
+                <div class="pull-right">
+                </div>
+                <div>
+                    <strong>Copyright</strong> VLA &copy; 2017
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../assets/admin/js/inspinia.js"></script>

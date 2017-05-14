@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý công văn</title>
+    <link href="~/assets/admin/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/assets/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/assets/admin/css/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/assets/admin/libs/angular-loading-bar/build/loading-bar.css" rel="stylesheet" />
+    <link href="~/assets/admin/css/plugins/datapicker/datepicker3.css" rel="stylesheet" />
+    <link href="~/assets/admin/css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <link href="~/assets/admin/css/animate.css" rel="stylesheet" />
+    <link href="~/assets/admin/css/style.css" rel="stylesheet" />
+    <link href="~/assets/admin/css/styleSingleAutocomplete.css" rel="stylesheet" />
+    <link href="~/assets/admin/css/styleMultiAutocomplete.css" rel="stylesheet" />
+    <link href="~/assets/admin/css/app.css" rel="stylesheet" />
+    <link href="~/assets/admin/css/angular-material.min.css" rel="stylesheet" />
+    
+</head>
+<body class="skin-1 pace-done" ng-app="VOfficeApp" ng-controller="rootController">
+
+    
+    <div ui-view></div>
+
+
+    <!-- Mainly scripts -->
+   
+    <script src="~/assets/admin/js/jquery-2.1.1.js"></script>
+    <script src="~/assets/admin/js/bootstrap.js"></script>
+    <script src="~/assets/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/assets/admin/js/plugins/slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Custom and plugin javascript -->
+  
+    <script src="~/assets/admin/js/plugins/pace/pace.min.js"></script>
+     
+
+
+    <!--Tree-->
+    <script src="~/assets/admin/js/plugins/jsTree/jstree.min.js"></script>
+
+    <!--Datapicker-->
+    <script src="~/assets/admin/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+
+    <!--Begin anguler js-->
+    <script src="~/assets/admin/libs/angular/angular.js"></script>
+    <script src="~/assets/admin/libs/angular-saninitize/angular-sanitize.js"></script>
+    <script src="~/assets/admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="~/assets/admin/js/angular-animate.min.js"></script>
+    <script src="~/assets/admin/js/angular-aria.min.js"></script>
+    <script src="~/assets/admin/js/angular-messages.min.js"></script>
+    <script src="~/assets/admin/js/angular-material.min.js"></script>
+    <script src="~/assets/admin/libs/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="~/assets/admin/libs/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="~/assets/admin/js/plugins/toastr/toastr.min.js"></script>
+    <script src="~/assets/admin/libs/bootbox/bootbox.js"></script>
+    <script src="~/assets/admin/libs/ngBootbox/ngBootbox.js"></script>
+    <script src="~/assets/admin/libs/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="~/assets/admin/libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <script src="~/app/shared/modules/VOffice.common.js"></script>
+    <script src="~/app/shared/services/notificationService.js"></script>
+    <script src="~/app/shared/services/dateformatService.js"></script>
+    <script src="~/app/shared/services/apiService.js"></script>
+    <script src="~/app/shared/services/focus.js"></script>
+    <script src="~/app/shared/services/authData.js"></script>
+    <script src="~/app/shared/services/authenticationService.js"></script>
+    <script src="~/app/shared/services/loginService.js"></script>
+    <script src="~/app/shared/directives/pagerDirective.js"></script>
+    <script src="~/app/shared/directives/ngEnter.js"></script>
+    <script src="~/app/shared/directives/ngCheckNull.js"></script>
+
+    <script src="~/app/shared/filters/statusFilter.js"></script>
+    <script src="~/app/shared/directives/focusMe.js"></script>
+
+    <script src="~/app/shared/templates/templates.js"></script>
+    <script src="~/app/shared/directives/multiple-autocomplete-field.js"></script>
+    <script src="~/app/app.js"></script>
+    <script src="~/app/shared/directives/angular-searchAndSelect.js"></script>
+    <script src="~/app/shared/services/indexSvc.js"></script>
+
+    <script src="~/app/components/home/homeController.js"></script>
+    <script src="~/app/components/home/rootController.js"></script>
+
+    <script src="~/app/components/document/documentType/documentType.module.js"></script>
+    <script src="~/app/components/document/documentType/documentTypeListController.js"></script>
+    <script src="~/app/components/document/documentType/documentTypeAddOrEditController.js"></script>
+
+    <script src="~/app/components/document/documentsignedby/documentSignedBy.module.js"></script>
+    <script src="~/app/components/document/documentsignedby/documentSignedByAddOrEditController.js"></script>
+    <script src="~/app/components/document/documentsignedby/documentSignedByListController.js"></script>
+    <script src="~/app/components/document/documentsignedby/documentSignedByAddOrEditController.js"></script>
+
+
+    <script src="~/app/components/category/customer/customer.module.js"></script>
+    <script src="~/app/components/category/customer/customerAddOrEditController.js"></script>
+    <script src="~/app/components/category/customer/customerListController.js"></script>
+
+    <script src="~/app/components/login/loginController.js"></script>
+    <script src="~/app/components/documentSigned/documentSigned.module.js"></script>
+    <script src="~/app/components/documentSigned/documentSignedAddController.js"></script>
+    <script src="~/app/components/documentSigned/documentSignListController.js"></script>
+
+    <script src="~/app/components/category/meetingroom/meetingRoom.module.js"></script>
+    <script src="~/app/components/category/meetingroom/meetingRoomListController.js"></script>
+    <script src="~/app/components/category/meetingroom/meetingRoomAddOrEditController.js"></script>
+    <script src="~/app/components/share/systemConfig/systemConfig.module.js"></script>
+    <script src="~/app/components/share/systemConfig/systemConfigListController.js"></script>
+</body>
+</html>

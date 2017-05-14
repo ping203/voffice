@@ -1,0 +1,37 @@
+﻿/*body { font-family: Arial; font-size: 12px; }*/
+body { color: #333; }
+a { color: #1ab394; }
+    a:focus, a:hover { color: #1ab394; }
+.wrapper-content { padding: 20px 10px 60px; }
+.skin-1 .nav-header { padding: 6px 25px 12px; }
+/*.nav > li > a { font-weight: normal; }
+label { font-weight: normal; }
+.label { font-weight: normal; font-size: 13px; }*/
+.titlebar-searchbox { width: 100%; }
+    .titlebar-searchbox input { width: 50% !important; }
+.pull-right input { float: right; }
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td { vertical-align: middle; border-collapse: collapse; }
+.table > caption + thead > tr:first-child > td, .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th { border-bottom: 0 none; }
+.form-control:focus, .single-line:focus { /*border-color:#0e9aef !important;*/ }
+.btn-success { background-color: #0e9aef; border-color: #0e9aef; }
+/*.form-group .date { padding: 0px 15px; }*/
+/*span.input-group-addon { display: none; }*/
+#dropzonePane { margin-top: 10px; }
+.form-box { background-color: #ffffff; border: 1px solid #e7eaec; border-top: 0; padding: 0; margin-bottom: 20px; }
+.form-box-header { background-color: #ffffff; border: 1px solid #e7eaec; border-bottom: 0; padding: 20px;overflow:hidden; }
+    .form-box-header h2 { margin-top: 0; }
+.formbox-content .tag-list li a { background: #ffffff; }
+.form-body { border-top: 1px solid #e7eaec; padding: 20px; }
+.form-text { border-top: 1px solid #e7eaec; }
+    .form-text .note-toolbar { padding: 10px 15px; }
+.form-body .form-group { margin-bottom: 15px; }
+    .form-body .form-group label { text-align: right; }
+.form-text .note-editor .note-toolbar { background-color: #F9F8F8; }
+.form-attachment { border-top: 1px solid #e7eaec; padding: 20px; font-size: 12px; }
+.formbox-content { background: none; border: none; padding: 10px; }
+.form-ontact { width: 23%; }
+.select2-container--bootstrap .select2-selection { border-radius: 0px !important; border: 1px solid #e5e6e7 !important; }
+.tabs-container .panel-body { padding: 20px 20px 40px 20px; }
+#page-wrapper { overflow: hidden; }
+.field-validation-error, span.error { background: rgba(0, 0, 0, 0) url("/content/global/img/error_small.png") no-repeat scroll 0 0px; color: #ff5a00; padding-left: 18px; }
+.fit-width{width:100% !important;}

@@ -1,0 +1,101 @@
+﻿<form class="form-horizontal" novalidate name="frmAddOrEditDocumentSignedBy" role="form" ng-submit="save()">
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-sm-10">
+            <h2>{{titleForm}}</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/">Trang chủ </a>
+                </li>
+                <li class="active">
+                    <strong>{{titleForm}}</strong>
+                </li>
+
+            </ol>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight ecommerce">
+        <div class="row">
+            <div class="col-lg-12 animated fadeInRight">
+                <div class="form-box-header">
+                    <div class="pull-right form-actions">
+                        <button class="btn btn-sm btn-primary" type="submit">Cập nhật</button>
+                        <button class="btn btn-sm btn-white" ng-click="BindList()">Hủy bỏ</button>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Mã khách hàng</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Mã khách hàng" id="code" class="form-control" ng-model="customer.code" ng-init="focusCode()" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Tên khách hàng</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Tên khách hàng" name="title" class="form-control" ng-model="customer.title" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Tên viết tắt</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Tên viết tắt" name="shortTitle" class="form-control" ng-model="customer.shortTitle" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Thứ tự</label>
+                            <div class="col-sm-1">
+                                <input type="number" min="0" placeholder="" ng-init="customer.order=0" name="order" class="form-control" ng-model="customer.order" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Địa chỉ</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Địa chỉ" name="address" class="form-control" ng-model="customer.address" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Số điện thoại</label>
+                            <div class="col-sm-6">
+                                <input type="text" numbersOnly placeholder="Số điện thoại" name="phoneNumber" class="form-control" ng-model="customer.phoneNumber" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Số fax</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Số fax" name="fax" class="form-control" ng-model="customer.fax" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Tên ngân hàng</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Tên ngân hàng" name="bankName" class="form-control" ng-model="customer.bankName" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Tài khoản ngân hàng</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Tài khoản ngân hàng" name="bankAccountNumber" class="form-control" ng-model="customer.bankAccountNumber" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Trạng thái</label>
+                            <div class="col-sm-6">
+                                <input type="checkbox" ng-init="customer.active = true" name="active" ng-model="customer.active">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-body text-right tooltip-demo form-actions">
+                        <button class="btn btn-sm btn-primary" type="submit">Cập nhật</button>
+                        <button class="btn btn-sm btn-white" ng-click="BindList()">Hủy bỏ</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+

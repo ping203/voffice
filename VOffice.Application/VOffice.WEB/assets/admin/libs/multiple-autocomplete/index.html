@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Angular Base App</title>
+    <link href="../../css/bootstrap.css" rel="stylesheet" />
+    <link href="styles/styles.css" rel="stylesheet" />
+</head>
+<body ng-app="multipleSelect" class="container">
+    <section id="content" class="row">
+        <div>
+            <div ng-include="'app/home/home.tpl.html'"></div>
+        </div>
+    </section>
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <script src="../angular/angular.js"></script>
+    
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="app/templates/templates.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/home/home-controller.js"></script>
+    <script src="app/directives/multiple-autocomplete-field/multiple-autocomplete-field.js"></script>
+    <!-- endinject -->
+</body>
+</html>
